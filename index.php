@@ -1,5 +1,4 @@
 <?php
-
  include 'function/main-functions.php';
 $pages = scandir('pages /');
 if (isset($_GET['page']) && !empty($_GET['page'])) {
