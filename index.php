@@ -1,4 +1,7 @@
 <?php
+
+ include 'function/main-functions.php';
+
 $pages = scandir('pages /');
 if (isset($_GET['page']) && !empty($_GET['page'])) {
     if (in_array($_GET['page'] . '.php', $pages)) {
@@ -10,11 +13,13 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
     $page = "home";
 }
 
-$pages_functions =scandir('functions/');
+$pages_functions =scandir('function/');
 if(in_array($page.'.func.php' ,$pages_functions)) {
-    include 'functions/'.$page.'func.php'; 
+    include 'function/'.$page.'.func.php'; 
 }
 ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +38,7 @@ if(in_array($page.'.func.php' ,$pages_functions)) {
     <div class="container">
 
         <? php
-                inclure  «pages /» . $page . '.php' ;
+                inclure  «pages/» . $page . '.php' ;
             ?>
 
     </div>
