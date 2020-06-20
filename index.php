@@ -3,7 +3,7 @@ session_start();
 require('controller/controller.php');
 require('controller/PostController.php');
 
-$postsController = new www\P4\controller\PostController();
+$postsController = new  www\p4\controller\PostController();
 
 if (isset($_GET['action'])) {
 
