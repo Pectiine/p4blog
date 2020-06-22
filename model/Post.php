@@ -80,7 +80,7 @@ class Post{
             $req->bindParam(":title", $this->title, PDO::PARAM_STR);
             $req->bindParam(":content", $this->content, PDO::PARAM_STR);
             $req->execute();
-            $message = "Votre chapitre a bien été enregistré !";
+            $message = "Votre billet a bien été enregistré !";
             return $message;
         }catch(PDOException $e){
             return "Votre enregistrement a échoué, en voici la raison : ".$e->getMessage();
@@ -94,7 +94,7 @@ class Post{
             $req->bindParam(":content", $this->content, PDO::PARAM_STR);
             $req->bindParam(":id", $id, PDO::PARAM_INT);
             $req->execute();
-            $message = "Votre chapitre a bien été mise à jour !";
+            $message = "Votre billet a bien été mise à jour !";
             return $message;
         }catch(PDOException $e){
             return "Votre enregistrement a échoué, en voici la raison : ".$e->getMessage();
@@ -106,10 +106,10 @@ class Post{
             $req = $this->connect->prepare("DELETE FROM post WHERE id = :id");
             $req->bindParam(":id", $id, PDO::PARAM_INT);
             $req->execute();
-            $message = "Le chapitre a bien été supprimé !";
+            $message = "Le billeta bien été supprimé !";
             return $message;
         }catch(PDOException $e){
-            return "Le chapitre n'a pas été supprimé, en voici la raison : ".$e->getMessage();
+            return "Le billet n'a pas été supprimé, en voici la raison : ".$e->getMessage();
         }
     }
 

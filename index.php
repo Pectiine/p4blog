@@ -86,7 +86,7 @@ if (isset($action)) {
             break;
         case 'allPosts':
             $listPosts = getAllPosts();
-            $title = "Blog de Jean Forteroche - Tous les chapitres";
+            $title = "Blog de Jean Forteroche - Tous les billets";
             $vue = "view/allPosts.php";
             break;
         case 'post':
