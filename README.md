@@ -1,3 +1,11 @@
+
+# Mise à jour du 22/06
+* Manque un dashbord et function connection
+* Manque des commentaires
+* Manque des class
+* quelques bug d'affichage 
+
+
 # Projet numéro 4 blog en php avec partie backend 
 Concevoir un blog en php sans framworkes. 
 * Une partie backend pour administrer le blog

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="fr">
-
 <head>
     <title><?php echo $title ?></title>
     <!-- Required meta tags -->
@@ -14,11 +13,10 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-
 <body>
     <header>
         <nav class="nav-wrapper blue-grey">
-            <a class="brand-logo" href="index.php">Jean FORTEROCHE</a>
+            <a class="brand-logo center" href="index.php">Jean FORTEROCHE </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <a href="index.php">Accueil</a>
@@ -43,8 +41,8 @@
                 <?php } ?>
             </ul>
         </nav>
-    </header> 
-    <img id="banniere1" src="image/road.jpg" alt="caribou">
+    </header>
+    <img id="banniere1" src="image/caribou.jpg" alt="caribou">
     <?php include($vue) ?>
     <footer class="page-footer blue-grey">
         <div class="container">
@@ -54,5 +52,4 @@
     <!-- Optional JavaScript -->
     <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
-
 </html>

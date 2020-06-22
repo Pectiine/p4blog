@@ -2,7 +2,6 @@
 session_start();
 ob_start();
 
-//includes
 include_once("model/BddConnect.php");
 include_once("controller/PostController.php");
 include_once("controller/UserController.php");
