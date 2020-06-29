@@ -4,6 +4,7 @@
 * Manque des class
 * Quelques bug d'affichage 
 * Dernières finitions
+* bug de signalement et password 
 
 mp admin 
 
