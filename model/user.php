@@ -17,6 +17,7 @@ class User
         $this->connect = $db->getDbh();
     }
 
+
     public function addUser()
     {
         try {
@@ -37,9 +38,10 @@ class User
             $message = "Vous êtes bien inscrit sur les nouvelles de Jean FORTEROCHE!";
             return $message;
         } catch (PDOException $e) {
-            return "Votre inscription a échoué " . $e->getMessage();
+            return "Votre inscription a échoué, en voici la raison : " . $e->getMessage();
         }
     }
+
     public function getUser($identifiant, $password)
     {
         try {
@@ -70,9 +72,11 @@ class User
                 }
             }
         } catch (PDOException $e) {
-            return "Votre requête a échoué" . $e->getMessage();
+            return "Votre requête a échoué, en voici la raison : " . $e->getMessage();
         }
     }
+
+
     public function getUserById($id)
     {
         try {
@@ -98,7 +102,7 @@ class User
                 return $user;
             }
         } catch (PDOException $e) {
-            return "Votre requête a échoué " . $e->getMessage();
+            return "Votre requête a échoué, en voici la raison : " . $e->getMessage();
         }
     }
 
@@ -110,11 +114,11 @@ class User
             $nbUser = $req->fetch();
             return $nbUser;
         } catch (PDOException $e) {
-            return "Votre requête a échoué " . $e->getMessage();
+            return "Votre requête a échoué, en voici la raison : " . $e->getMessage();
         }
     }
 
-    //id
+
     public function getId()
     {
         return $this->id;
@@ -124,7 +128,6 @@ class User
         $this->id = $id;
     }
 
-    //lastName
     public function getLastName()
     {
         return $this->lastName;
@@ -134,7 +137,6 @@ class User
         $this->lastName = $lastName;
     }
 
-    //firstName
     public function getFirstName()
     {
         return $this->firstName;
@@ -144,7 +146,6 @@ class User
         $this->firstName = $firstName;
     }
 
-    //identifiant
     public function getIdentifiant()
     {
         return $this->identifiant;
@@ -154,7 +155,7 @@ class User
         $this->identifiant = $identifiant;
     }
 
-    //mot de passe
+
     public function getPassword()
     {
         return $this->password;
@@ -164,7 +165,7 @@ class User
         $this->password = $password;
     }
 
-    //mail
+
     public function getMail()
     {
         return $this->mail;
@@ -174,7 +175,7 @@ class User
         $this->mail = $mail;
     }
 
-    //role
+
     public function getRole()
     {
         return $this->role;

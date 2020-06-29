@@ -1,9 +1,13 @@
 
-# Mise à jour du 22/06
-* Manque un dashbord et function connection
-* Manque des commentaires
+# Mise à jour du 29/06
+* préparation du diaporama et présentation
 * Manque des class
-* quelques bug d'affichage 
+* Quelques bug d'affichage 
+* Dernières finitions
+
+mp admin 
+
+
 
 
 # Projet numéro 4 blog en php avec partie backend 

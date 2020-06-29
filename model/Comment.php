@@ -27,7 +27,7 @@ class Comment
             $message = "Votre commentaire a bien été posté !";
             return $message;
         } catch (PDOException $e) {
-            return "Votre commentaire n'a pas été posté " . $e->getMessage();
+            return "Votre commentaire n'a pas été posté, en voici la raison : " . $e->getMessage();
         }
     }
 
@@ -40,7 +40,7 @@ class Comment
             $message = "Ce commentaire a bien été supprimé !";
             return $message;
         } catch (PDOException $e) {
-            return "Ce commentaire n'a pas été supprimé " . $e->getMessage();
+            return "Ce commentaire n'a pas été supprimé, en voici la raison : " . $e->getMessage();
         }
     }
 
@@ -64,7 +64,7 @@ class Comment
             }
             return $listComments;
         } catch (PDOException $e) {
-            return "Cette requête n'a pas fonctionné " . $e->getMessage();
+            return "Cette requête n'a pas fonctionné, en voici la raison : " . $e->getMessage();
         }
     }
 
@@ -88,7 +88,7 @@ class Comment
             }
             return $listCommentsReported;
         } catch (PDOException $e) {
-            return "Votre requête a échoué " . $e->getMessage();
+            return "Votre requête a échoué, en voici la raison : " . $e->getMessage();
         }
     }
 
@@ -113,7 +113,7 @@ class Comment
             }
             return $listComments;
         } catch (PDOException $e) {
-            return "Votre requête a échoué " . $e->getMessage();
+            return "Votre requête a échoué, en voici la raison : " . $e->getMessage();
         }
     }
 
@@ -126,7 +126,7 @@ class Comment
             $nbComment = $req->fetch();
             return $nbComment;
         } catch (PDOException $e) {
-            return "Votre requête a échoué " . $e->getMessage();
+            return "Votre requête a échoué, en voici la raison : " . $e->getMessage();
         }
     }
 
@@ -149,7 +149,7 @@ class Comment
             }
             return $comment;
         } catch (PDOException $e) {
-            return "Votre requête a échoué " . $e->getMessage();
+            return "Votre requête a échoué, en voici la raison : " . $e->getMessage();
         }
     }
 

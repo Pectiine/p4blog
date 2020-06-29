@@ -1,4 +1,5 @@
 <?php
+
 class Role
 {
     private $connect;
@@ -10,6 +11,8 @@ class Role
         $db = BddConnect::getInstance();
         $this->connect = $db->getDbh();
     }
+
+
 
     public function getRoleById($id)
     {
@@ -25,7 +28,7 @@ class Role
             }
             return $role;
         } catch (PDOException $e) {
-            return "Votre requête a échoué " . $e->getMessage();
+            return "Votre requête a échoué, en voici la raison : " . $e->getMessage();
         }
     }
 

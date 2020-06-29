@@ -80,7 +80,7 @@ class Post{
             $req->bindParam(":title", $this->title, PDO::PARAM_STR);
             $req->bindParam(":content", $this->content, PDO::PARAM_STR);
             $req->execute();
-            $message = "Votre billet a bien été enregistré !";
+            $message = "Votre chapitre a bien été enregistré !";
             return $message;
         }catch(PDOException $e){
             return "Votre enregistrement a échoué, en voici la raison : ".$e->getMessage();
@@ -94,7 +94,7 @@ class Post{
             $req->bindParam(":content", $this->content, PDO::PARAM_STR);
             $req->bindParam(":id", $id, PDO::PARAM_INT);
             $req->execute();
-            $message = "Votre billet a bien été mise à jour !";
+            $message = "Votre chapitre a bien été mise à jour !";
             return $message;
         }catch(PDOException $e){
             return "Votre enregistrement a échoué, en voici la raison : ".$e->getMessage();
@@ -106,10 +106,10 @@ class Post{
             $req = $this->connect->prepare("DELETE FROM post WHERE id = :id");
             $req->bindParam(":id", $id, PDO::PARAM_INT);
             $req->execute();
-            $message = "Le billeta bien été supprimé !";
+            $message = "Le chapitre a bien été supprimé !";
             return $message;
         }catch(PDOException $e){
-            return "Le billet n'a pas été supprimé, en voici la raison : ".$e->getMessage();
+            return "Le chapitre n'a pas été supprimé, en voici la raison : ".$e->getMessage();
         }
     }
 
@@ -136,7 +136,7 @@ class Post{
         
     }
 
-    //id
+   
     public function getId(){
         return $this->id;
     }
@@ -144,7 +144,7 @@ class Post{
         $this->id = $id;
     }
 
-    //title
+
     public function getTitle(){
         return $this->title;
     }
@@ -152,15 +152,13 @@ class Post{
         $this->title = $title;
     }
 
-    //content
     public function getContent(){
         return $this->content;
     }
     public function setContent($content){
         $this->content = $content;
     }
-    
-    //date creation
+  
     public function getCreatedAt(){
         return $this->created_at;
     }
@@ -168,7 +166,7 @@ class Post{
         $this->created_at = $created_at;
     }
 
-    //date modification
+  
     public function getUpdateAt(){
         return $this->update_at;
     }
@@ -176,7 +174,6 @@ class Post{
         $this->update_at = $update_at;
     }
 
-    //user
     public function getUser(){
         return $this->user;
     }

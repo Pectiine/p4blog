@@ -1,6 +1,6 @@
 <?php
 include_once("./model/Role.php");
-include_once("./model/User.php");
+include_once("./model/user.php");
 function verifLogin()
 {
     $user = new User();

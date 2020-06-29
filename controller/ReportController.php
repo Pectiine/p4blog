@@ -1,7 +1,8 @@
 <?php
 include_once("./model/Report.php");
 
-function addReport($id_comment){
+function addReport($id_comment)
+{
     $report = new Report();
     $report->setUser($_SESSION['user']);
     $report->setComment($id_comment);
@@ -11,9 +12,9 @@ function addReport($id_comment){
     return $message;
 }
 
-function verifReport($id_comment){
+function verifReport($id_comment)
+{
     $report = new Report;
     $nbReport = $report->verifReport($id_comment, $_SESSION['user']);
     return $nbReport;
 }
-

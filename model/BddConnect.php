@@ -12,32 +12,29 @@ class BddConnect
 
     private function __construct()
     {
-        try{
+        try {
             $this->dbh = new PDO(
-                $this->type.':host='.$this->host.';port='.';dbname='.$this->dbname, 
-                $this->username, 
+                $this->type . ':host=' . $this->host . ';port=' . ';dbname=' . $this->dbname,
+                $this->username,
                 $this->password,
                 array(PDO::ATTR_PERSISTENT => true)
             );
-            $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);            
+            $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->dbh->exec("set names 'utf8';");
-          
-        }
-        catch(PDOException $e){
-            echo "<div class='error'>Erreur !: ".$e->getMessage()."</div>";
+        } catch (PDOException $e) {
+            echo "<div class='error'>Erreur !: " . $e->getMessage() . "</div>";
             die();
         }
     }
 
     public static function getInstance()
     {
-        if (!self::$instance instanceof self)
-        {
+        if (!self::$instance instanceof self) {
             self::$instance = new self;
         }
         return self::$instance;
     }
-    
+
     public function getDbh()
     {
         return $this->dbh;
@@ -47,7 +44,7 @@ class BddConnect
     {
         return array();
     }
-    
+
     public function __wakeup()
     {
         $this->getDbh();
