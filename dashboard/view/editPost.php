@@ -21,7 +21,6 @@
         <div class="form-group">
           <label for="content">Contenu</label>
           <textarea class="tinyMCE" id="content" name="content"><?php echo $post->getContent(); ?></textarea>
-          <input name="image" type="file" id="upload" class="d-none" onchange="">
         </div>
 
         <input type="submit" value="Mettre à jour" class="waves-effect waves-light btn-small blue-grey">

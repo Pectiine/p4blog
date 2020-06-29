@@ -49,7 +49,8 @@
 		</div>
 		<footer class="footer">
 			<div class="container">
-				<span class="text-muted">&copy; <?php echo date("Y"); ?> - Jean Forteroche</span>
+				<span class="text-muted">&copy; <?php echo date("Y"); ?> - Jean Forteroche Sandra B </span>
+				
 			</div>
 		</footer>
 
