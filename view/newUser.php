@@ -31,7 +31,7 @@
                     <input class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Enter email" type="text" name="mail" onKeyUp="verifMail(this)" required>
                     <input readonly="" class="form-control-plaintext" id="staticEmail" value="email@example.com" type="text">
                 </div>
-                <input type="submit" value="S'inscrire" class="btn btn-primary">
+                <input type="submit" value="S'inscrire" class="btn btn-success">
             </form>
 
         </div>
