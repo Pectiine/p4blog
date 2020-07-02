@@ -26,7 +26,7 @@
                         <tr>
                             <td colspan=6>Aucun commentaires signalés</td>
                         </tr>
-                        <?php } else {
+                        <?php } else { 
                         foreach ($listCommentsReported as $comment) { ?>
                             <tr>
                                 <td scope="row" data-label="Titre du chapitre"><?php echo $comment->getPost()->getTitle(); ?></td>

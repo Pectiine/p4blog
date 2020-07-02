@@ -15,9 +15,9 @@
 
         <div class="form-group">
           <label for="content">Contenu</label>
-          <textarea class="tinyMCE" id="content" name="content"></textarea>
+          <textarea class="tinyMCE" id="content" name="content" style="margin-top: 0px; margin-bottom: 0px; height: 329px; width: 100%;"></textarea>
         </div>
-        <input type="submit" value="Envoyer" class="waves-effect waves-light btn-small blue-grey">
+        <input type="submit" value="Envoyer" class="btn btn-secondary">
       </form>
 
     </div>

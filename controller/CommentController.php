@@ -1,6 +1,8 @@
 <?php
 include_once("./model/Comment.php");
-function addComment()
+
+    
+  function addComment()
 {
     $comment = new Comment();
     $comment->setContent($_POST['comment']);
@@ -11,14 +13,14 @@ function addComment()
     return $message;
 }
 
-function getCommentsByPost($idPost)
+ function getCommentsByPost($idPost)
 {
     $comment = new Comment();
     $listComments = $comment->getCommentsByPost($idPost);
     return $listComments;
 }
 
-function deleteComment($idComment)
+ function deleteComment($idComment)
 {
     $comment = new Comment();
     $message = $comment->deleteComment($idComment);

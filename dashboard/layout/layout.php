@@ -7,7 +7,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<link href="dashboard/css/style.css" rel="stylesheet">
+	<link href="p4/dashboard/css/style.css" rel="stylesheet">
+	<script src="https://cdn.tiny.cloud/1/v8acqaqi0ectq8n4tdw47j5bsgtsb1qlhpj8hzwapzqzvp3q/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+	<script>
+		tinymce.init({
+			selector: '.tinyMCE'
+		});
+	</script>
 
 </head>
 
@@ -54,11 +60,6 @@
 
 
 
-	<footer class="footer">
-		<div class="container">
-			<span class="text-muted">&copy; <?php echo date("Y"); ?> - Jean Forteroche</span>
-		</div>
-	</footer>
 
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

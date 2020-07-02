@@ -8,7 +8,6 @@ include_once("controller/UserController.php");
 include_once("controller/ReportController.php");
 include_once("controller/CommentController.php");
 
-
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
 } else {

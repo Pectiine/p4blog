@@ -17,13 +17,13 @@
           <label for="title">Title</label>
           <input class="form-control" id="title" placeholder="Title" type="text" name="title" value="<?php echo $post->getTitle(); ?>">
         </div>
-
-        <div class="form-group">
-          <label for="content">Contenu</label>
-          <textarea class="tinyMCE" id="content" name="content"><?php echo $post->getContent(); ?></textarea>
+        <div class="textc">
+          <div class="form-group">
+            <label for="content">Contenu</label>
+            <textarea class="tinyMCE" id="content" name="content" style="margin-top: 0px; margin-bottom: 0px; height: 329px; width: 100%;"><?php echo $post->getContent(); ?></textarea>
+          </div>
+          <input type="submit" value="Mettre à jour" class="btn btn-secondary">
         </div>
-
-        <input type="submit" value="Mettre à jour" class="waves-effect waves-light btn-small blue-grey">
       </form>
     </div>
   </div>
