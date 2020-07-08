@@ -7,11 +7,17 @@ include_once("controller/PostController.php");
 include_once("controller/UserController.php");
 include_once("controller/CommentController.php");
 include_once("controller/ReportController.php");
+
+$CommentController = new CommentController();
+$PostController = new PostController();
+$ReportController = new ReportController();
+$UserController = new UserController();
+
 if (!isset($_SESSION['user'])) {
     header('location:../index.php');
     exit();
 } else {
-    $userLogin = verifLogin($_SESSION['user']);
+    $userLogin = $UserController->verifLogin($_SESSION['user']);
 
     if ($userLogin->getRole() == 'lecteur') {
         header('location:../index.php');
@@ -57,7 +63,7 @@ if (!isset($_SESSION['user'])) {
                 break;
             case 'addPostBdd':
                 if (isset($_POST['title']) && !empty($_POST['title'])) {
-                    $message = addPost();
+                    $message = $PostController->addPost();
                 } else {
                     $message = "Veuillez renseigner un titre !";
                 }
@@ -67,55 +73,55 @@ if (!isset($_SESSION['user'])) {
             case 'updatePostBdd':
                 $id = $_GET['id'];
                 if (isset($_POST['title']) && !empty($_POST['title'])) {
-                    $message = updatePost($id);
+                    $message = $PostController->updatePost($id);
                 } else {
                     $message = "Veuillez renseigner un titre !";
                 }
-                $post = getOnePost($id);
+                $post = $PostController->getOnePost($id);
                 $title = "Blog Jean Forteroche - Tableau de bord - Édition d'un chapitre";
                 $vue = "view/editPost.php";
                 break;
             case 'allPosts':
-                $listPosts = getAllPosts();
+                $listPosts = $PostController->getAllPosts();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les chapitres";
                 $vue = "view/allPosts.php";
                 break;
             case 'editPost':
-                $post = getOnePost($_GET['id']);
+                $post = $PostController->getOnePost($_GET['id']);
                 $title = "Blog Jean Forteroche - Tableau de bord - Édition d'un chapitre";
                 $vue = "view/editPost.php";
                 break;
             case 'deletePost':
-                $message = deletePost($_GET['id']);
-                $listPosts = getAllPosts();
+                $message = $PostController->deletePost($_GET['id']);
+                $listPosts = $PostController->getAllPosts();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les chapitres";
                 $vue = "view/allPosts.php";
                 break;
             case 'allComments':
-                $listComments = allComments();
+                $listComments = $CommentController->allComments();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les commentaires";
                 $vue = "view/allComments.php";
                 break;
             case 'deleteComment':
-                $message = deleteComment($_GET['id']);
-                $listComments = allComments();
+                $message = $CommentController->deleteComment($_GET['id']);
+                $listComments = $CommentController->allComments();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les commentaires";
                 $vue = "view/allComments.php";
                 break;
             case 'allCommentsReported':
-                $listCommentsReported = allCommentsReported();
+                $listCommentsReported = $CommentController->allCommentsReported();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les commentaires signalés";
                 $vue = "view/allCommentsReported.php";
                 break;
             case 'viewReport':
-                $comment = getCommentById($_GET["id"]);
-                $listReport = getReportByIdComment($_GET['id']);
+                $comment = $CommentController->getCommentById($_GET["id"]);
+                $listReport = $ReportController->getReportByIdComment($_GET['id']);
                 $title = "Blog Jean Forteroche - Tableau de bord - Signalement(s) d'un commentaire";
                 $vue = "view/viewReport.php";
                 break;
             case 'deleteReport':
-                $message = deleteAllReport($_GET["id"]);
-                $listCommentsReported = allCommentsReported();
+                $message = $ReportController->deleteAllReport($_GET["id"]);
+                $listCommentsReported = $CommentController->allCommentsReported();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les commentaires signalés";
                 $vue = "view/allCommentsReported.php";
                 break;

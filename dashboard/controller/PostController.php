@@ -1,53 +1,55 @@
 <?php
 include_once("../model/Post.php");
 
-
-function addPost()
+class PostController
 {
-    $post = new Post();
-    $post->setTitle($_POST["title"]);
-    $post->setContent($_POST["content"]);
+    function addPost()
+    {
+        $post = new Post();
+        $post->setTitle($_POST["title"]);
+        $post->setContent($_POST["content"]);
 
-    $message = $post->insertPost();
-    return $message;
-}
+        $message = $post->insertPost();
+        return $message;
+    }
 
-function updatePost($id)
-{
-    $post = new Post();
-    $post->setTitle($_POST["title"]);
-    $post->setContent($_POST["content"]);
+    function updatePost($id)
+    {
+        $post = new Post();
+        $post->setTitle($_POST["title"]);
+        $post->setContent($_POST["content"]);
 
-    $message = $post->updatePost($id);
-    return $message;
-}
+        $message = $post->updatePost($id);
+        return $message;
+    }
 
-function deletePost($id)
-{
-    $post = new Post();
-    $message = $post->deletePost($id);
-    return $message;
-}
+    function deletePost($id)
+    {
+        $post = new Post();
+        $message = $post->deletePost($id);
+        return $message;
+    }
 
-function getAllPosts()
-{
-    $post = new Post();
-    $listPosts = $post->allPosts();
+    function getAllPosts()
+    {
+        $post = new Post();
+        $listPosts = $post->allPosts();
 
-    return $listPosts;
-}
+        return $listPosts;
+    }
 
-function getOnePost($id)
-{
-    $post = new Post();
-    $onePost = $post->getPost($id);
+    function getOnePost($id)
+    {
+        $post = new Post();
+        $onePost = $post->getPost($id);
 
-    return $onePost;
-}
+        return $onePost;
+    }
 
-function getCountPost()
-{
-    $post = new Post();
-    $nbPost = $post->getCountPost();
-    return $nbPost;
+    function getCountPost()
+    {
+        $post = new Post();
+        $nbPost = $post->getCountPost();
+        return $nbPost;
+    }
 }

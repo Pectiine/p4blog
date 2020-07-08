@@ -8,10 +8,14 @@ include_once("controller/UserController.php");
 include_once("controller/ReportController.php");
 include_once("controller/CommentController.php");
 
+$CommentController = new CommentController();
+$PostController = new PostController();
+
+
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $listLastFivePosts = getLastFivePosts();
+    $listLastFivePosts = $PostController->getLastFivePosts();
     $title = "Blog de Jean Forteroche - Accueil";
     $vue = 'view/accueil.php';
 }
@@ -19,7 +23,7 @@ if (isset($_GET['action'])) {
 if (isset($action)) {
     switch ($action) {
         case 'accueil':
-            $listLastFivePosts = getLastFivePosts();
+            $listLastFivePosts = $PostController->getLastFivePosts();
             $title = "Blog de Jean Forteroche - Accueil";
             $vue = "view/accueil.php";
             break;
@@ -56,7 +60,7 @@ if (isset($action)) {
                     header('location:dashboard/index.php');
                     exit;
                 } else {
-                    $listLastFivePosts = getLastFivePosts();
+                    $listLastFivePosts = $PostController->getLastFivePosts();
                     $title = "Blog de Jean Forteroche - Accueil";
                     $vue = "view/accueil.php";
                 }
@@ -77,22 +81,21 @@ if (isset($action)) {
                     $params["httponly"]
                 );
             }
-
             session_destroy();
-            $listLastFivePosts = getLastFivePosts();
+            $listLastFivePosts = $PostController->getLastFivePosts();
             $title = "Blog de Jean Forteroche - Accueil";
             $vue = "view/accueil.php";
             break;
         case 'allPosts':
-            $listPosts = getAllPosts();
+            $listPosts = $PostController->getAllPosts();
             $title = "Blog de Jean Forteroche - Tous les billets";
             $vue = "view/allPosts.php";
             break;
         case 'post':
             if (isset($_GET['id'])) {
-                $post = getOnePost($_GET['id']);
+                $post = $PostController->getOnePost($_GET['id']);
                 if (!empty($post->getId())) {
-                    $listComments = getCommentsByPost($_GET['id']);
+                    $listComments = $CommentController->getCommentsByPost($_GET['id']);
                     $title = "Blog de Jean Forteroche - " . $post->getTitle();
                     $vue = "view/post.php";
                 } else {
@@ -106,26 +109,26 @@ if (isset($action)) {
             break;
         case 'addComment':
             if (isset($_POST['comment']) && !empty($_POST['comment'])) {
-                $message = addComment();
+                $message = $CommentController->addComment();
             } else {
                 $message = "Veuillez mettre du texte dans votre commentaire !";
             }
-            $post = getOnePost($_POST['idPost']);
-            $listComments = getCommentsByPost($_POST['idPost']);
+            $post = $PostController->getOnePost($_POST['idPost']);
+            $listComments = $CommentController->getCommentsByPost($_POST['idPost']);
             $title = "Blog de Jean Forteroche - " . $post->getTitle();
             $vue = "view/post.php";
             break;
         case 'deleteComment':
-            $message = deleteComment($_GET['idComment']);
-            $post = getOnePost($_GET['idPost']);
-            $listComments = getCommentsByPost($_GET['idPost']);
+            $message = $CommentController->deleteComment($_GET['idComment']);
+            $post = $PostController->getOnePost($_GET['idPost']);
+            $listComments = $CommentController->getCommentsByPost($_GET['idPost']);
             $title = "Blog de Jean Forteroche - " . $post->getTitle();
             $vue = "view/post.php";
             break;
         case 'addReport':
             $message = addReport($_GET['id']);
-            $post = getOnePost($_GET['idPost']);
-            $listComments = getCommentsByPost($_GET['idPost']);
+            $post = $PostController->getOnePost($_GET['idPost']);
+            $listComments = $CommentController->getCommentsByPost($_GET['idPost']);
             $title = "Blog de Jean Forteroche - " . $post->getTitle();
             $vue = "view/post.php";
             break;
@@ -134,6 +137,6 @@ if (isset($action)) {
             $vue = 'view/error404.php';
     }
 }
-include_once("layout/layout.php");
 
+include_once("layout/layout.php");
 ob_end_flush();

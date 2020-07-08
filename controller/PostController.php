@@ -1,25 +1,30 @@
 <?php
+
 include_once("./model/Post.php");
-function getAllPosts()
+
+class PostController
 {
-    $post = new Post();
-    $listPosts = $post->allPosts();
+    function getAllPosts()
+    {
+        $post = new Post();
+        $listPosts = $post->allPosts();
 
-    return $listPosts;
-}
+        return $listPosts;
+    }
 
-function getOnePost($id)
-{
-    $post = new Post();
-    $onePost = $post->getPost($id);
+    function getOnePost($id)
+    {
+        $post = new Post();
+        $onePost = $post->getPost($id);
 
-    return $onePost;
-}
+        return $onePost;
+    }
 
-function getLastFivePosts()
-{
-    $post = new Post();
-    $listLastFivePosts = $post->getLastFivePosts();
+    function getLastFivePosts()
+    {
+        $post = new Post();
+        $listLastFivePosts = $post->getLastFivePosts();
 
-    return $listLastFivePosts;
+        return $listLastFivePosts;
+    }
 }

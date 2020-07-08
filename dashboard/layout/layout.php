@@ -9,12 +9,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link href="p4/dashboard/css/style.css" rel="stylesheet">
 	<script src="https://cdn.tiny.cloud/1/v8acqaqi0ectq8n4tdw47j5bsgtsb1qlhpj8hzwapzqzvp3q/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-	<script>
-		tinymce.init({
-			selector: '.tinyMCE'
-		});
-	</script>
-
+	<script>tinymce.init({selector: '.tinyMCE'});</script>
 </head>
 
 <body>
@@ -39,9 +34,7 @@
 					<li class="nav-item <?php if ($action == "allComments") echo 'item-active' ?>">
 						<a class="nav-link" href="index.php?action=allComments">Tous les commentaires</a>
 					</li>
-					<li class="nav-item <?php if ($action == "allCommentsReported") echo 'item-active' ?>">
-						<a class="nav-link" href="index.php?action=allCommentsReported">Commentaires signalés</a>
-					</li>
+				
 					<li class="nav-item">
 						<a class="nav-link" href="../index.php">Aller sur le site</a>
 					</li>

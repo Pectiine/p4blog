@@ -4,7 +4,6 @@
             <?php if (isset($message)) {  ?>
                 <div class="alert alert-dismissible alert-secondary">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-
                     <?php echo $message; ?>
                 </div>
             <?php } ?>

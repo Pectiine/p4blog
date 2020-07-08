@@ -33,13 +33,17 @@
                                 <td data-label="Auteur"><?php echo $comment->getUser()->getIdentifiant(); ?></td>
                                 <td data-label="Date de publication"><?php echo date("d/m/Y H:i", strtotime($comment->getDateComment())); ?></td>
                                 <td data-label="Commentaire"><?php echo htmlspecialchars($comment->getContent()); ?></td>
-                                <td data-label="Nb signalement"><?php echo getCountReportedByComment($comment->getId())[0] ?></td>
-                                <td data-label="Actions">
+                                <td data-label="Nb signalement"><?php echo $ReportController->getCountReportedByComment($comment->getId())[0] ?></td>
+                            
+                                <td data-label="Action">
                                     <div class="btn-action">
-                                        <a class="waves-effect waves-light btn-small blue-grey" href="" data-toggle="modal" data-target="#modalDelete<?php echo $comment->getId(); ?>">Supprimer</a>
+                                        <a class="btn btn-sm btn-info btn-delete" href="index.php?action=viewReport&id=<?php echo $comment->getId(); ?>">Voir signalements</a>
+                                        <a class="btn btn-sm btn-success btn-delete" href="index.php?action=deleteReport&id=<?php echo $comment->getId(); ?>">Valider</a>
+                                        <a class="btn btn-sm btn-danger btn-delete" href="" data-toggle="modal" data-target="#modalDelete<?php echo $comment->getId(); ?>">Supprimer</a>
                                     </div>
                                 </td>
                             </tr>
+
                             <div class="modal fade" id="modalDelete<?php echo $comment->getId(); ?>" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -59,7 +63,6 @@
                                     </div>
                                 </div>
                             </div>
-
                     <?php }
                     }
                     ?>

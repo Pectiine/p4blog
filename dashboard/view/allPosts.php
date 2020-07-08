@@ -33,7 +33,7 @@
                                 <td data-label="Dernière modification"><?php if (!empty($post->getUpdateAt())) {
                                                                             echo date("d/m/Y H:i", strtotime($post->getUpdateAt()));
                                                                         }  ?></td>
-                                <td data-label="Nb commentaires"><?php echo getCountCommentByPost($post->getId())[0] ?></td>
+                                <td data-label="Nb commentaires"><?php echo $CommentController->getCountCommentByPost($post->getId())[0] ?></td>
                                 <td data-label="Actions">
                                     <div class="btn-action">
                                         <a class="waves-effect waves-light btn-small blue-grey" href="../index.php?action=post&id=<?php echo $post->getId(); ?>">Voir</a>
