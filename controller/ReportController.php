@@ -1,7 +1,7 @@
 <?php
 include_once("./model/Report.php");
 
-
+ 
 function addReport($id_comment)
 {
     $report = new Report();

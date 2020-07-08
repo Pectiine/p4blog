@@ -16,23 +16,18 @@
     </div>
   </div>
 </div>
-
 <section id="comment" class="bg-dark p-4 mt-4 text-white">
   <div class="container">
     <div class="row">
-      <!-- liste commentaires -->
       <h5 class="text-white">Commentaires</h5>
       <?php if (isset($message)) {  ?>
         <div class="alert alert-dismissible alert-secondary">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-
           <?php echo $message; ?>
-
         </div>
       <?php } ?>
-
       <?php
-      if (empty($listComments)) echo "Aucun commentaire";
+      if (empty($listComments)) echo " ";
       foreach ($listComments as $comment) { ?>
         <div class="col-12 py-3">
           <blockquote class="blockquote">
@@ -99,13 +94,9 @@
           </div>
         </div>
       <?php } ?>
-
-      <!-- formulaire -->
-
       <div class="col-12 pl-0 text-white">
         <?php
         if (isset($_SESSION["user"])) { ?>
-          <!-- ici message -->
           <form action="index.php?action=addComment" method="POST">
             <div class="form-group">
               <label for="comment">Laisser un commentaire</label>

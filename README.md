@@ -1,10 +1,9 @@
 
-# Mise à jour du 29/06
-* préparation du diaporama et présentation
-* Manque des class
-* Quelques bug d'affichage 
-* Dernières finitions
-* bug de signalement et password 
+# Mise à jour du 08/07
+* présentation avec un fichier pdf pour changer du diaporama
+* Manque deux class dans controller
+* Dernières finitions de bug d'affichage 
+* terminer pour le lundi 13 
 
 mp admin 
 

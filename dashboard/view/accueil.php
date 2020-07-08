@@ -27,9 +27,10 @@
         <div class="col-lg-4 col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Nombre de commentaires signalés</h4>
-                    <p class="card-text"><?php echo $ReportController->getCountCommentsReported()[0]; ?> Commentaires</p>
-                    <a href="index.php?action=allComments" class=" waves-effect waves-light btn-small blue-grey">Voir les commentaires</a>
+                    <h4 class="card-title">Commentaires </h4>
+                    <p class="card-text">Nombre de commentaires signalés
+                    <?php echo $ReportController->getCountCommentsReported()[0]; ?> </p>
+                    <a href="index.php?action=allComments" class=" waves-effect waves-light btn-small blue-grey">Voir tout les commentaires</a>
                 </div>
             </div>
         </div>
