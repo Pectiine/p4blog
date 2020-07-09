@@ -26,7 +26,7 @@
 						<a class="nav-link" href="index.php?action=accueil">Accueil</a>
 					</li>
 					<li class="nav-item <?php if ($action == "addPost") echo 'item-active' ?>">
-						<a class="nav-link" href="index.php?action=addPost">Publier un chapitre</a>
+						<a class="nav-link" href="index.php?action=addPost">Publier un billet</a>
 					</li>
 					<li class="nav-item <?php if ($action == "allPosts") echo 'item-active' ?>">
 						<a class="nav-link" href="index.php?action=allPosts">Tous les billets</a>

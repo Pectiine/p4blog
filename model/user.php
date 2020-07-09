@@ -118,7 +118,7 @@ class User{
         
     }
 
-    //id
+   
     public function getId(){
         return $this->id;
     }
@@ -126,7 +126,7 @@ class User{
         $this->id = $id;
     }
 
-    //lastName
+    
     public function getLastName(){
         return $this->lastName;
     }
@@ -134,7 +134,7 @@ class User{
         $this->lastName = $lastName;
     }
 
-    //firstName
+    
     public function getFirstName(){
         return $this->firstName;
     }
@@ -142,7 +142,6 @@ class User{
         $this->firstName = $firstName;
     }
 
-    //identifiant
     public function getIdentifiant(){
         return $this->identifiant;
     }
@@ -150,7 +149,7 @@ class User{
         $this->identifiant = $identifiant;
     }
 
-    //mot de passe
+    
     public function getPassword(){
         return $this->password;
     }
@@ -158,7 +157,7 @@ class User{
         $this->password = $password;
     }
 
-    //mail
+    
     public function getMail(){
         return $this->mail;
     }
@@ -166,7 +165,7 @@ class User{
         $this->mail = $mail;
     }
 
-    //role
+  
     public function getRole(){
         return $this->role;
     }
