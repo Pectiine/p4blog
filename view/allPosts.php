@@ -1,4 +1,6 @@
-<p class="text-lg-center">Tout les billets</p>
+<title> Tout les billets </title>
+
+<h2 class="text-lg-center">Tout les billets</h2>
 
 <div class="container">
     <div class="container px-lg-5">

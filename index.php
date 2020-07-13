@@ -4,12 +4,14 @@ ob_start();
 
 include_once("model/BddConnect.php");
 include_once("controller/PostController.php");
-include_once("controller/UserController.php");
-include_once("controller/ReportController.php");
+include("controller/UserController.php");
+include("controller/ReportController.php");
 include_once("controller/CommentController.php");
 
 $CommentController = new CommentController();
 $PostController = new PostController();
+$ReportController = new ReportController();
+$UserController = new UserController();
 
 
 if (isset($_GET['action'])) {
@@ -40,12 +42,12 @@ if (isset($action)) {
             exit;
             break;
         case 'addUser':
-            $message = addUser();
+            $message = $UserController->addUser();
             $title = "Blog de Jean Forteroche - S'inscrire";
             $vue = "view/newUser.php";
             break;
         case 'login':
-            $userLogin = verifLogin();
+            $userLogin = $UserController->verifLogin();
             if (!$userLogin) {
                 $message = "La combinaison identifiant et mot de passe est incorrect";
                 $title = "Blog de Jean Forteroche - Se connecter";
@@ -126,7 +128,7 @@ if (isset($action)) {
             $vue = "view/post.php";
             break;
         case 'addReport':
-            $message = addReport($_GET['id']);
+            $message = $ReportController->addReport($_GET['id']);
             $post = $PostController->getOnePost($_GET['idPost']);
             $listComments = $CommentController->getCommentsByPost($_GET['idPost']);
             $title = "Blog de Jean Forteroche - " . $post->getTitle();

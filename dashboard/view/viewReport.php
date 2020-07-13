@@ -1,8 +1,11 @@
+<title> Signalement </title>
+<h2 class="text-lg-center">Signalement</h2>
+
 <div class="container">
     <div class="row">
         <div class="col-12">
 
-            <h1>Le commentaire Signalé</h1>
+            <h3>Le commentaire Signalé</h3>
             <a href="index.php?action=deleteReport&id=<?php echo $comment->getId(); ?>" class="badge badge-pill badge-success">Valider</a>
             <a href="" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modalDeleteComment">Supprimer</a>
             <blockquote class="blockquote">
@@ -12,7 +15,7 @@
                     <cite title="Source Title"><?php echo date("d-m-Y H:i", strtotime($comment->getDateComment())); ?></cite></footer>
             </blockquote>
 
-            <h1>Les signalements</h1>
+            <h3>Les signalements</h3>
 
             <?php foreach ($listReport as $report) { ?>
                 <blockquote class="blockquote">

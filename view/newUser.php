@@ -1,3 +1,6 @@
+<title> S'inscrire </title>
+<h2 class="text-lg-center">S'inscrire</h2>
+
 <div class="container">
     <div class="row">
         <div class="col-12">

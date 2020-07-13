@@ -1,3 +1,5 @@
+<title> Accueil </title>
+<h2 class="text-lg-center">Accueil</h2>
 <div class="container">
     <div class="row equal">
         <div class="col-12">

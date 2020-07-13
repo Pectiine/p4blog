@@ -3,7 +3,7 @@
     <div>
       <div class="post-content">
         <h3><?php echo $post->getTitle(); ?></h3>
-        <?php if (isset($_SESSION['user']) && verifLoginById($_SESSION["user"])->getRole() == "admin") { ?>
+        <?php if (isset($_SESSION['user']) && $UserController->verifLoginById($_SESSION["user"])->getRole() == "admin") { ?>
         <?php } ?>
         <h6 class="text-muted">Publié le : <?php echo date("d-m-Y", strtotime($post->getCreatedAt())); ?></h6>
         <?php
@@ -36,7 +36,7 @@
               <?php echo $comment->getUser()->getRole() == "admin" ? $comment->getUser()->getFirstName() . " " . $comment->getUser()->getLastName() : $comment->getUser()->getIdentifiant(); ?>
               <cite title="Source Title"><?php echo date("d-m-Y H:i", strtotime($comment->getDateComment())); ?></cite></footer>
           </blockquote>
-          <?php if (isset($_SESSION["user"]) && verifLoginById($_SESSION["user"])->getRole() == "lecteur") { ?>
+          <?php if (isset($_SESSION["user"]) && $UserController->verifLoginById($_SESSION["user"])->getRole() == "lecteur") { ?>
             <a href="" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modalReport<?php echo $comment->getId(); ?>">Signaler</a>
           <?php } ?>
         </div>
@@ -50,7 +50,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <?php if (verifReport($comment->getId())[0] > 0) { ?>
+              <?php if ($ReportController->verifReport($comment->getId())[0] > 0) { ?>
                 <div class="modal-body text-dark">
                   <p>Vous avez déjà signalé le commentaire.</p>
                 </div>

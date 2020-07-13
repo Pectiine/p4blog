@@ -1,3 +1,5 @@
+<title> Publier </title>
+<h2 class="text-lg-center">Publier</h2>
 <div class="container">
   <div class="row">
     <div class="col-12">

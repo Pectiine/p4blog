@@ -21,11 +21,8 @@ class User{
         try{
             $req = $this->connect->prepare("INSERT INTO user (lastName, firstName, identifiant, password, mail, id_role) VALUES (:lastName, :firstName, :identifiant, :password, :mail, 1)");
             
-            $options = [
-                'cost' => 11,                                         
-                'salt' => random_bytes(22)
-            ];
-            $password = password_hash($this->password, PASSWORD_BCRYPT, $options);
+         
+            $password = password_hash($this->password, PASSWORD_BCRYPT );
         
             $req->bindParam(":lastName", $this->lastName, PDO::PARAM_STR);
             $req->bindParam(":firstName", $this->firstName, PDO::PARAM_STR);

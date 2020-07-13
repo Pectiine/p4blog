@@ -1,3 +1,6 @@
+<title> Se connecter </title>
+<h2 class="text-lg-center">Se connecter</h2>
+
 <div class="container">
     <div class="row">
         <div class="col-12">

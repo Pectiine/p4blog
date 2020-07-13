@@ -1,4 +1,7 @@
+<title> Modifier </title>
+<h2 class="text-lg-center">Modifier un post</h2>
 <div class="container">
+
   <div class="row">
     <div class="col-12">
 

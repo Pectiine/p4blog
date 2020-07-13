@@ -1,3 +1,6 @@
+<title> Tout les billets</title>
+<h2 class="text-lg-center">Tout les billets</h2>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">

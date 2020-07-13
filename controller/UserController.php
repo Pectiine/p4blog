@@ -2,8 +2,8 @@
 include_once("./model/Role.php");
 include_once("./model/user.php");
 
-
-
+class UserController
+{
     function verifLogin()
     {
         $user = new User();
@@ -30,4 +30,4 @@ include_once("./model/user.php");
         $message = $user->addUser();
         return $message;
     }
-
+}

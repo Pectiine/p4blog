@@ -1,8 +1,11 @@
+<title> Accueil </title>
+<h2 class="text-lg-center">Accueil</h2>
+
 <div class="container">
     <?php
-   
+
     if (isset($_SESSION["user"])) {
-        echo "Bienvenue " .verifLoginById($_SESSION["user"])->getFirstName() . " " . verifLoginById($_SESSION["user"])->getLastName();
+        echo "Bienvenue " .$UserController->verifLoginById($_SESSION["user"])->getFirstName() . " " .$UserController->verifLoginById($_SESSION["user"])->getLastName();
     }
     ?>
     <div id="header">

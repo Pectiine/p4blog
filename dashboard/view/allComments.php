@@ -1,3 +1,7 @@
+<title> Tout les commentaires </title>
+<h2 class="text-lg-center">Tout les commentaires</h2>
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -34,7 +38,7 @@
                                 <td data-label="Date de publication"><?php echo date("d/m/Y H:i", strtotime($comment->getDateComment())); ?></td>
                                 <td data-label="Commentaire"><?php echo htmlspecialchars($comment->getContent()); ?></td>
                                 <td data-label="Nb signalement"><?php echo $ReportController->getCountReportedByComment($comment->getId())[0] ?></td>
-                            
+
                                 <td data-label="Action">
                                     <div class="btn-action">
                                         <a class="btn btn-sm btn-info btn-delete" href="index.php?action=viewReport&id=<?php echo $comment->getId(); ?>">Voir signalements</a>
