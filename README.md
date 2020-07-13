@@ -1,14 +1,3 @@
-
-# Mise à jour du 08/07
-* Manque deux class dans controller
-* Dernières finitions de bug d'affichage 
-* terminer pour le lundi 13 
-* rajout de titre
-* refaire un diaporama 
-
-mp admin 
-
-
 # Projet numéro 4 blog en php avec partie backend 
 Concevoir un blog en php sans framworkes. 
 * Une partie backend pour administrer le blog
