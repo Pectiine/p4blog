@@ -11,9 +11,6 @@ class Role
         $db = BddConnect::getInstance();
         $this->connect = $db->getDbh();
     }
-
-
-
     public function getRoleById($id)
     {
         try {

@@ -1,3 +1,11 @@
+# Base de données
+mysql
+localhost
+ p4
+ root
+ mp admin
+
+# mot de passe du blog Admin 
 # Projet numéro 4 blog en php avec partie backend 
 Concevoir un blog en php sans framworkes. 
 * Une partie backend pour administrer le blog
