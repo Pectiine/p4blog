@@ -1,7 +1,7 @@
 <?php
 
 include_once("../model/Role.php");
-include_once("../model/user.php");
+include_once("../model/User.php");
 class UserController
 {
     function verifLogin($id)

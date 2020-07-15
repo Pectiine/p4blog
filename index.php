@@ -19,7 +19,7 @@ if (isset($_GET['action'])) {
 } else {
     $listLastFivePosts = $PostController->getLastFivePosts();
     $title = "Blog de Jean Forteroche - Accueil";
-    $vue = 'view/accueil.php';
+    $vue = 'view/Accueil.php';
 }
 
 if (isset($action)) {
@@ -27,15 +27,15 @@ if (isset($action)) {
         case 'accueil':
             $listLastFivePosts = $PostController->getLastFivePosts();
             $title = "Blog de Jean Forteroche - Accueil";
-            $vue = "view/accueil.php";
+            $vue = "view/Accueil.php";
             break;
         case 'signIn':
             $title = "Blog de Jean Forteroche - Se connecter";
-            $vue = "view/login.php";
+            $vue = "view/Login.php";
             break;
         case 'signUp':
             $title = "Blog de Jean Forteroche - S'inscrire";
-            $vue = "view/newUser.php";
+            $vue = "view/NewUser.php";
             break;
         case 'dashboard':
             header('location:dashboard/index.php');
@@ -44,17 +44,17 @@ if (isset($action)) {
         case 'addUser':
             $message = $UserController->addUser();
             $title = "Blog de Jean Forteroche - S'inscrire";
-            $vue = "view/newUser.php";
+            $vue = "view/NewUser.php";
             break;
         case 'login':
             $userLogin = $UserController->verifLogin();
             if (!$userLogin) {
                 $message = "La combinaison identifiant et mot de passe est incorrect";
                 $title = "Blog de Jean Forteroche - Se connecter";
-                $vue = "view/login.php";
+                $vue = "view/Login.php";
             } else if (is_string($userLogin)) {
                 $message = $userLogin;
-                $vue = "view/login.php";
+                $vue = "view/Login.php";
             } else {
                 $_SESSION["user"] = $userLogin->getId();
 
@@ -64,7 +64,7 @@ if (isset($action)) {
                 } else {
                     $listLastFivePosts = $PostController->getLastFivePosts();
                     $title = "Blog de Jean Forteroche - Accueil";
-                    $vue = "view/accueil.php";
+                    $vue = "view/Accueil.php";
                 }
             }
             break;
@@ -86,12 +86,12 @@ if (isset($action)) {
             session_destroy();
             $listLastFivePosts = $PostController->getLastFivePosts();
             $title = "Blog de Jean Forteroche - Accueil";
-            $vue = "view/accueil.php";
+            $vue = "view/Accueil.php";
             break;
         case 'allPosts':
             $listPosts = $PostController->getAllPosts();
             $title = "Blog de Jean Forteroche - Tous les billets";
-            $vue = "view/allPosts.php";
+            $vue = "view/AllPosts.php";
             break;
         case 'post':
             if (isset($_GET['id'])) {
@@ -118,27 +118,27 @@ if (isset($action)) {
             $post = $PostController->getOnePost($_POST['idPost']);
             $listComments = $CommentController->getCommentsByPost($_POST['idPost']);
             $title = "Blog de Jean Forteroche - " . $post->getTitle();
-            $vue = "view/post.php";
+            $vue = "view/Post.php";
             break;
         case 'deleteComment':
             $message = $CommentController->deleteComment($_GET['idComment']);
             $post = $PostController->getOnePost($_GET['idPost']);
             $listComments = $CommentController->getCommentsByPost($_GET['idPost']);
             $title = "Blog de Jean Forteroche - " . $post->getTitle();
-            $vue = "view/post.php";
+            $vue = "view/Post.php";
             break;
         case 'addReport':
             $message = $ReportController->addReport($_GET['id']);
             $post = $PostController->getOnePost($_GET['idPost']);
             $listComments = $CommentController->getCommentsByPost($_GET['idPost']);
             $title = "Blog de Jean Forteroche - " . $post->getTitle();
-            $vue = "view/post.php";
+            $vue = "view/Post.php";
             break;
         default:
             $title = "Blog de Jean Forteroche - Erreur 404";
-            $vue = 'view/error404.php';
+            $vue = 'view/Error404.php';
     }
 }
 
-include_once("layout/layout.php");
+include_once("layout/Layout.php");
 ob_end_flush();

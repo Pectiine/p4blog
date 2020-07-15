@@ -1,5 +1,6 @@
 <?php
 
+
 class BddConnect
 {
     private static $instance;
@@ -9,6 +10,7 @@ class BddConnect
     private $username = "root";
     private $password = 'admin';
     private $dbh;
+
 
     private function __construct()
     {
@@ -26,7 +28,6 @@ class BddConnect
             die();
         }
     }
-
     public static function getInstance()
     {
         if (!self::$instance instanceof self) {

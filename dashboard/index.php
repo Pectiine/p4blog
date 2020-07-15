@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
         switch ($action) {
             case 'accueil':
                 $title = "Blog Jean Forteroche - Tableau de bord - Accueil";
-                $vue = "view/accueil.php";
+                $vue = "view/Accueil.php";
                 break;
             case 'logOut':
                 $_SESSION = array();
@@ -59,7 +59,7 @@ if (!isset($_SESSION['user'])) {
                 break;
             case 'addPost':
                 $title = "Blog Jean Forteroche - Tableau de bord - Publication d'un chapitre";
-                $vue = "view/addPost.php";
+                $vue = "view/AddPost.php";
                 break;
             case 'addPostBdd':
                 if (isset($_POST['title']) && !empty($_POST['title'])) {
@@ -68,7 +68,7 @@ if (!isset($_SESSION['user'])) {
                     $message = "Veuillez renseigner un titre !";
                 }
                 $title = "Blog Jean Forteroche - Tableau de bord - Publication d'un chapitre";
-                $vue = "view/addPost.php";
+                $vue = "view/AddPost.php";
                 break;
             case 'updatePostBdd':
                 $id = $_GET['id'];
@@ -79,61 +79,61 @@ if (!isset($_SESSION['user'])) {
                 }
                 $post = $PostController->getOnePost($id);
                 $title = "Blog Jean Forteroche - Tableau de bord - Édition d'un chapitre";
-                $vue = "view/editPost.php";
+                $vue = "view/EditPost.php";
                 break;
             case 'allPosts':
                 $listPosts = $PostController->getAllPosts();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les chapitres";
-                $vue = "view/allPosts.php";
+                $vue = "view/AllPosts.php";
                 break;
             case 'editPost':
                 $post = $PostController->getOnePost($_GET['id']);
                 $title = "Blog Jean Forteroche - Tableau de bord - Édition d'un chapitre";
-                $vue = "view/editPost.php";
+                $vue = "view/EditPost.php";
                 break;
             case 'deletePost':
                 $message = $PostController->deletePost($_GET['id']);
                 $listPosts = $PostController->getAllPosts();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les chapitres";
-                $vue = "view/allPosts.php";
+                $vue = "view/AllPosts.php";
                 break;
             case 'allComments':
                 $listComments = $CommentController->allComments();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les commentaires";
-                $vue = "view/allComments.php";
+                $vue = "view/AllComments.php";
                 break;
             case 'deleteComment':
                 $message = $CommentController->deleteComment($_GET['id']);
                 $listComments = $CommentController->allComments();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les commentaires";
-                $vue = "view/allComments.php";
+                $vue = "view/AllComments.php";
                 break;
             case 'allCommentsReported':
                 $listCommentsReported = $CommentController->allCommentsReported();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les commentaires signalés";
-                $vue = "view/allCommentsReported.php";
+                $vue = "view/AllCommentsReported.php";
                 break;
             case 'viewReport':
                 $comment = $CommentController->getCommentById($_GET["id"]);
                 $listReport = $ReportController->getReportByIdComment($_GET['id']);
                 $title = "Blog Jean Forteroche - Tableau de bord - Signalement(s) d'un commentaire";
-                $vue = "view/viewReport.php";
+                $vue = "view/ViewReport.php";
                 break;
             case 'deleteReport':
                 $message = $ReportController->deleteAllReport($_GET["id"]);
                 $listCommentsReported = $CommentController->allCommentsReported();
                 $title = "Blog Jean Forteroche - Tableau de bord - Tous les commentaires signalés";
-                $vue = "view/allCommentsReported.php";
+                $vue = "view/AllCommentsReported.php";
                 break;
 
             default:
                 $title = "Blog Jean Forteroche - Tableau de bord - Accueuil";
-                $vue = 'view/accueil.php';
+                $vue = 'view/Accueil.php';
         }
     }
 
 
-    include_once("layout/layout.php");
+    include_once("layout/Layout.php");
 }
 
 ob_end_flush();
