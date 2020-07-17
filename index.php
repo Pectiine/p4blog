@@ -99,7 +99,7 @@ if (isset($action)) {
                 if (!empty($post->getId())) {
                     $listComments = $CommentController->getCommentsByPost($_GET['id']);
                     $title = "Blog de Jean Forteroche - " . $post->getTitle();
-                    $vue = "view/post.php";
+                    $vue = "view/Post.php";
                 } else {
                     $title = "Blog de Jean Forteroche - Erreur 404";
                     $vue = "view/error404.php";

@@ -11,7 +11,6 @@ class BddConnect
     private $password = 'admin';
     private $dbh;
 
-
     private function __construct()
     {
         try {

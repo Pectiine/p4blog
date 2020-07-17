@@ -42,7 +42,6 @@
                                 <td data-label="Action">
                                     <div class="btn-action">
                                         <a class="btn btn-sm btn-info btn-delete" href="index.php?action=viewReport&id=<?php echo $comment->getId(); ?>">Voir signalements</a>
-                                        <a class="btn btn-sm btn-success btn-delete" href="index.php?action=deleteReport&id=<?php echo $comment->getId(); ?>">Valider</a>
                                         <a class="btn btn-sm btn-danger btn-delete" href="" data-toggle="modal" data-target="#modalDelete<?php echo $comment->getId(); ?>">Supprimer</a>
                                     </div>
                                 </td>

@@ -6,7 +6,7 @@
         <div class="col-12">
 
             <h3>Le commentaire Signalé</h3>
-            <a href="index.php?action=deleteReport&id=<?php echo $comment->getId(); ?>" class="badge badge-pill badge-success">Valider</a>
+            <a href="index.php?action=deleteReport&id=<?php echo $comment->getId(); ?>
             <a href="" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modalDeleteComment">Supprimer</a>
             <blockquote class="blockquote">
                 <p class="mb-0"><?php echo htmlspecialchars($comment->getContent()); ?></p>

@@ -18,7 +18,7 @@
         <?php
         foreach ($listLastFivePosts as $post) { ?>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem; height: 300px;">
                 <div class="card-header ">
                     <h4><?php echo $post->getTitle(); ?></h4><span class="badge badge-secondary"><?php echo date("d-m-Y", strtotime($post->getCreatedAt())); ?></span>
                 </div>
